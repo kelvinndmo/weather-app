@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast');
 const geocode = require('./utils/geocode').geocode;
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Define paths for expresion config
 const novak = path.join(__dirname, '../public');
@@ -91,6 +92,6 @@ app.get('/help', (req, resp) => {
   resp.send('Help page...');
 });
 
-app.listen(3000, () => {
-  console.log('Server is running');
+app.listen(port, () => {
+  console.log('Server is running on ' + port);
 });
